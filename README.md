@@ -1,2 +1,2 @@
 # sds-api
-API for safety data sheet data
+REST API for safety data sheet data
