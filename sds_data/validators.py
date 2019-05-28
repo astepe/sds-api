@@ -23,7 +23,7 @@ def validate_nfpa_number(value):
         )
 
 
-def validate_manufacturer_supported(manufacturer):
+def validate_manufacturer(manufacturer):
     """Validate that the entered value is a currently supported manufacturer"""
 
     if manufacturer not in manufacturers:

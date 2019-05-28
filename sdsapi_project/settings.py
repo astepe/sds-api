@@ -40,6 +40,11 @@ INSTALLED_APPS = [
 
     # 3rd party
     'rest_framework',
+    # generates token on server
+    'rest_framework.authtoken',
+    # adds login, logout and password reset endpoints
+    'rest_auth',
+    # 'rest_framework_swagger',
 
     # local
     'sds_data.apps.SDSDataConfig',
@@ -54,6 +59,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 ROOT_URLCONF = 'sdsapi_project.urls'
 
